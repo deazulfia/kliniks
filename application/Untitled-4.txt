@@ -1,0 +1,139 @@
+<?php
+		$this->load->library('cfpdf');		
+		$pdf = new FPDF('P','mm','A4');
+		$pdf->AddPage();
+		$pdf->SetTitle('Daftar Resep');
+		$pdf->Cell(130, 5, '', 0, 0, 'L');
+		$pdf->Ln();
+		$pdf->Cell(10, 5, '', 0, 0, 'L');
+		$pdf->Ln();
+		$pdf->Cell(10, 5, '', 0, 0, 'L');
+		$pdf->Ln();
+		$pdf->Cell(10, 5, '', 0, 0, 'L');
+		$pdf->image('assets/images/icon.png');
+		$pdf->SetFont('times','',13);
+
+		$pdf->Text(45,30,'Klinik Get Medik',0);
+		$pdf->Text(45,34,'Cyber 1 Building 5th Floors',0);
+		$pdf->Text(45,39,'Jl. Kuningan Barat No.8, Kuningan Barat ',0);
+		$pdf->Text(45,44,'Mampang Prapatan, Jakarta selatan 12710',0);
+		$pdf->Text(45,49,'Telp. 021-5269588 ext.222',0);
+
+		$pdf->Line(13,50,195,50);
+		$pdf->Ln();
+
+		$pdf->SetFont('times','',15);
+		$pdf->Cell(130, 5, '', 0, 0, 'L');
+		$pdf->Ln();
+		$pdf->Cell(190, 5, 'Resep Pasien', 0, 0, 'C');
+		$pdf->Ln();
+		$pdf->Cell(130, 5, '', 0, 0, 'L');
+		$pdf->Ln();
+
+		$pdf->Line(10,20,10,288);// garis vertikal kanan
+		$pdf->Line(200,288,200,20);// garis vertikal kiri
+		$pdf->Line(10,20,200,20);// garis horzontal atas
+		$pdf->Line(10,288,200,288);// garis horizontal bawah
+		$pdf->SetFont('times','',12);
+		$pdf->Ln();
+		$pdf->Cell(5, 5, '', 0, 0, 'L');
+		$pdf->Cell(25, 5, 'No. Invoice', 0, 0, 'L'); 
+		$pdf->Cell(3, 5, ':', 0, 0, 'L');
+		$pdf->Ln();
+
+		$pdf->Cell(5, 5, '', 0, 0, 'L');
+		$pdf->Cell(25, 5, 'No RM', 0, 0, 'L'); 
+		$pdf->Cell(3, 5, ':', 0, 0, 'L');
+
+		$pdf->Ln();
+		$pdf->Cell(5, 5, '', 0, 0, 'L');
+		$pdf->Cell(25, 5, 'Nama', 0, 0, 'L'); 
+		$pdf->Cell(3, 5, ':', 0, 0, 'L');
+
+		$pdf->Ln();
+		$pdf->Cell(5, 5, '', 0, 0, 'L');
+		$pdf->Cell(25, 5, 'Alamat', 0, 0, 'L');
+		$pdf->Cell(3, 5, ':', 0, 0, 'L');  
+
+		$pdf->Ln();
+		$pdf->Cell(5, 5, '', 0, 0, 'L');
+		$pdf->Cell(25, 5, 'Dokter', 0, 0, 'L'); 
+		$pdf->Cell(3, 5, ':', 0, 0, 'L');
+
+		$pdf->Ln();
+		$pdf->Ln();
+
+		$pdf->SetFont('times','',11);
+		$pdf->Line(13,98,195,98);
+		$pdf->Cell(130, 5, '', 0, 0, 'L');
+		$pdf->Ln();
+		$pdf->Cell(7, 5, '', 0, 0, 'L');
+		$pdf->Cell(35, 5, 'Kode', 0, 0, 'L');
+		$pdf->Cell(40, 5, 'Nama', 0, 0, 'L');
+		$pdf->Cell(30, 5, 'Harga', 0, 0, 'L');
+		$pdf->Cell(15, 5, 'Qty', 0, 0, 'L');
+		$pdf->Cell(30, 5, 'Satuan', 0, 0, 'L');
+		$pdf->Cell(35, 5, 'Total Harga', 0, 0, 'L');
+		$pdf->Ln();
+
+		$pdf->Cell(5, 5, '', 0, 0, 'C');
+		$pdf->Cell(130, 5, '---------------------------------------------------------------------------------------------------------------------------------------', 0, 0, 'L');
+		$pdf->Ln();
+
+		$pdf->Cell(5, 5, '', 0, 0, 'C');
+		$pdf->Cell(130, 5, '---------------------------------------------------------------------------------------------------------------------------------------', 0, 0, 'L');
+		$pdf->Ln();
+		
+		$pdf->Cell(147, 5, 'Total Bayar', 0, 0, 'R');
+		$pdf->Cell(10, 5, '', 0, 0, 'R');
+
+		$pdf->Ln();
+
+		$pdf->Cell(147, 5, 'Cash', 0, 0, 'R');
+		$pdf->Cell(10, 5, '', 0, 0, 'R');
+
+		$pdf->Ln();
+
+		$pdf->Cell(147, 5, 'Kembali', 0, 0, 'R');
+		$pdf->Cell(10, 5, '', 0, 0, 'R');
+
+		$pdf->Ln();
+
+		$pdf->Cell(5, 5, '', 0, 0, 'C');
+		$pdf->Cell(130, 5, '---------------------------------------------------------------------------------------------------------------------------------------', 0, 0, 'L');
+		$pdf->Ln();
+		$pdf->Cell(7, 5, '', 0, 0, 'C');
+		$pdf->Cell(25, 5, 'Catatan : ', 0, 0, 'L');
+		$pdf->Ln();
+		$pdf->Cell(7, 5, '', 0, 0, 'C');
+
+		$pdf->Ln();
+		$pdf->Cell(5, 5, '', 0, 0, 'C');
+		$pdf->Cell(130, 5, '---------------------------------------------------------------------------------------------------------------------------------------', 0, 0, 'L');
+		$pdf->Ln();
+		
+		$pdf->SetFont('times','',12);
+		$pdf->Text(165,230,'Cashier',0);
+
+		$pdf->Ln();
+		$pdf->Line(13,282,195,282);
+		$pdf->Cell(130, 5, '', 0, 0, 'L');
+		$pdf->Ln();
+		$pdf->SetFont('times','',8);
+		$pdf->Cell(5, 5, '', 0, 0, 'C');
+		$pdf->Text(13,286,'Invoice ini merupakan bukti pembayaran yang sah ',0);
+
+		$pdf->Line(13,270,125,270);//kotak bawah
+		$pdf->Line(13,252,125,252);//kotak atas
+		$pdf->Line(125,252,125,270);//kotak kiri
+		$pdf->Line(13,252,13,270);//kotak kanan
+		$pdf->SetFont('times','',10);
+		$pdf->Text(14,256,'PT. Layanan Medik Indonesia. NPWP : 747896014132000 ',0);
+		$pdf->Text(14,260,'Invoice ini berlaku sebagai faktur pajak sesuai dengan peraturan ',0);
+		$pdf->Text(14,264,'Harga Obat sudah termasuk pajak penambahan nilai ',0);
+		$pdf->Text(14,268,'Reservasi rawat jalan Call Center 021-5269588 (Senin - Jumat 09.00 - 18.00) ',0);
+		
+
+		$pdf->Output();
+
+?>

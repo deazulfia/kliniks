@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Klinik GM</title>
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url();?>assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url();?>assets/css/core.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url();?>assets/css/components.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url();?>assets/css/colors.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/sweetalert.css"/>
+
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script type="text/javascript" src="<?php echo base_url();?>assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/js/plugins/loaders/blockui.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+    <script type="text/javascript" src="<?php echo base_url();?>assets/js/plugins/tables/datatables/datatables.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/js/plugins/buttons/spin.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/js/plugins/buttons/ladda.min.js"></script>
+
+	<script type="text/javascript" src="<?php echo base_url();?>assets/js/core/app.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/js/pages/datatables_basic.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/js/pages/components_modals.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/pages/components_buttons.js"></script>
+
+
+	<!-- /theme JS files -->
+
+    <style>
+        .sidebar-user{
+            height: 92px;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Main navbar -->
+	<div class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html"><p> KLINIK Get Medik </p></a>
+
+			<ul class="nav navbar-nav visible-xs-block">
+				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+				<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+			</ul>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav">
+				<li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a></li>
+				<li class="dropdown">
+					<div class="dropdown-menu dropdown-content">
+						<div class="dropdown-content-footer">
+							<a href="#" data-popup="tooltip" title="All activity"><i class="icon-menu display-block"></i></a>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<p class="navbar-text"><span class="label bg-success">Online</span></p>
+			<ul class="nav navbar-nav navbar-right">
+                <li><a href="<?php echo site_url('secure/logout'); ?>"><i class="icon-switch2"></i> Logout</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main sidebar -->
+			<div class="sidebar sidebar-main">
+				<div class="sidebar-content">
+
+					<!-- User menu -->
+					<div class="sidebar-user">
+						<div class="category-content">
+							<div class="media">
+								<a href="#" class="media-left"><img src="<?php echo base_url();?>assets/images/icon.png" class="img-sm" alt=""></a>
+								<div class="media-body">
+									<span class="media-heading text-semibold">KLINIK GET MEDIK</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /user menu -->
+
+
+					<!-- Main navigation -->
+					<div class="sidebar-category sidebar-category-visible">
+						<div class="category-content no-padding">
+							<ul class="navigation navigation-main navigation-accordion">
+
+								<!-- Main -->
+								<!-- <li class="active"><a href="<?php echo base_url();?>"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
+								<li>
+                                    <a href="#"><i class="icon-people"></i> <span>Data User</span></a>
+                                    <ul>
+										<li><a href="<?php echo base_url();?>Admin/pasien/index">Data Pasien</a></li>
+									</ul>
+                                </li> -->
+                                <li><a href="<?php echo base_url();?>pasien_daftar/index"><i class="icon-people"></i> <span>Daftar Pasien</span></a></li>
+                                <li><a href="<?php echo base_url();?>resepp/index"><i class="icon-list-unordered"></i> <span>Data Resep</span></a></li>
+								
+                            </ul>
+						</div>
+					</div>
+					<!-- /main navigation -->
+
+				</div>
+			</div>
+			<!-- /main sidebar -->
+
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Page header -->
+				<div class="page-header page-header-default">
+					<div class="page-header-content">
+						<div class="page-title">
+							<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> - Dashboard</h4>
+						</div>
+					</div>
+
+					<div class="breadcrumb-line">
+						<ul class="breadcrumb">
+							<li><a href="index.html"><i class="icon-home2 position-left"></i> Data User</a></li>
+							<li class="active">Data Resep</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /page header -->
+
+
+				<!-- Content area -->
+				<div class="content">
+                    <div class="panel panel-flat">
+						<div class="panel-heading">
+                            <h5 class="panel-title">Data Resep</h5>
+                            <br />
+                            <!-- <button type="button" class="btn bg-teal-400 btn-labeled" onclick="add_pasien()"><b><i class="glyphicon glyphicon-plus-sign"></i></b> Add Pasien</button> -->
+                            <br />
+							<div class="heading-elements">
+								<ul class="icons-list">
+			                		<li><a data-action="collapse"></a></li>
+			                		<li><a data-action="reload"></a></li>
+			                		<li><a data-action="close"></a></li>
+			                	</ul>
+		                	</div>
+						</div>
+                        </center>
+                        <div class="alert alert-success" role="alert" id="pesan"></div>
+                            <table id="pasien" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>No. RM</th>
+                                        <th>Id Pasien</th>
+                                        <th>Nama Pasien</th>
+                                        <th>Tempat Lahir</th>
+                                        <th>Tanggal Lahir</th>
+                                        <th>Jenis Kelamin</th>
+                                        <th>Umur Pasien</th>
+                                        <th>Golongan Darah</th>
+                                        <th>Riwayat alergi</th>
+                                        <th>Nama Obat</th>
+                                        <th>Tanggal</th>
+                                        <th>Waktu</th>
+                                        <!-- <th>Keluhan</th> -->
+                                        <!-- <th>Diagnosa</th> -->
+                                        <th>Saran Tindakan</th>
+                                        <th style="width:125px;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach($resep as $r){?>
+                                        <tr>
+                                            <td><?php echo $r->id_rekam_medis;?></td>
+                                            <td><?php echo $r->id_pasien;?></td>
+                                            <td><?php echo $r->nama;?></td>
+                                            <td><?php echo $r->tempat_lahir_pasien;?></td>
+                                            <td><?php echo $r->tanggal_lahir_pasien;?></td>
+                                            <td><?php echo $r->jk_pasien;?></td>
+                                            <td><?php echo $r->umur_pasien;?></td>
+                                            <td><?php echo $r->goldar_pasien;?></td>
+                                            <td><?php echo $r->riwayat_alergi;?></td>
+                                            <td><?php echo $r->nama_obat;?></td>
+                                            <td><?php echo $r->tanggal;?></td>
+                                            <td><?php echo $r->waktu;?></td>
+                                            <!-- <td><?php echo $r->keluhan;?></td> -->
+                                            <!-- <td><?php echo $r->diagnosa;?></td> -->
+                                            <td><?php echo $r->saran_tindakan;?></td>
+                                            <td>
+                                            <!-- <a class="tombol" href="<?php echo base_url();?>admin/Laporan/cetak_laporan/">Print semua data </a><br> -->
+                                            <a class="tombol" href="<?php echo base_url();?>admin/Laporan/resep/<?php echo $r->id_rekam_medis;?>"><img src="<?php echo base_url();?>assets/images/printer.png"></a>
+                                            <!-- <button type="button" class="btn btn-info btn-icon btn-rounded" href="<?php echo base_url();?>Dokter/tindakan/index"><i class="glyphicon glyphicon-pencil"></i></button> -->
+                                            </td>
+                                        </tr>
+                                    <?php }?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="footer text-muted">
+                        &copy; 2018. Klinik GM
+                    </div>
+			    </div>
+			<!-- /main content -->
+		</div>
+		<!-- /page content -->
+	</div>
+    <!-- /page container -->
+    
+    <script type="text/javascript">
+        $(document).ready( function () {
+            $('#pasien').DataTable({
+                "scrollX": true
+            });            
+
+        });
+        
+        var save_method; //for save method string
+        var table;
+        $('#pesan').hide();
+
+        function add_pasien(){
+            save_method = 'add';
+            $('#form')[0].reset(); // reset form on modals
+            $('#modal_form').modal('show'); // show bootstrap modal
+            $('.error_msg').hide();    
+        }
+
+        function update_pasien(id_pasien){
+            $('.error_msg').hide();
+            save_method = 'update';
+            $('#form')[0].reset(); // reset form on modals
+
+            //Ajax Load data from ajax
+            $.ajax({
+                url : "<?php echo site_url('Admin/Pasien/ajax_edit/')?>/" + id_pasien,
+                type: "GET",
+                dataType: "JSON",
+                success: function(data){
+                    $('[name="id_pasien"]').val(data.id_pasien);
+                    $('[name="nama"]').val(data.nama);
+                    $('[name="tempat_lahir_pasien"]').val(data.tempat_lahir_pasien);
+                    $('[name="tanggal_lahir_pasien"]').val(data.tanggal_lahir_pasien);
+                    $('[name="jk_pasien"]').val(data.jk_pasien);
+                    $('[name="umur_pasien"]').val(data.umur_pasien);
+                    $('[name="goldar_pasien"]').val(data.goldar_pasien);
+                    $('[name="riwayat_alergi"]').val(data.riwayat_alergi);
+                    $('[name="sip"]').val(data.sip);
+                    $('[name="keluhan"]').val(data.keluhan);
+                    $('[name="diagnosa"]').val(data.diagnosa);
+                    $('[name="saran_tindakan"]').val(data.saran_tindakan);
+                    $('[name="nama_obat"]').val(data.nama_obat);
+                    $('[name="jumlah_obat"]').val(data.jumlah_obat);
+                    $('[name="keterangan"]').val(data.keterangan);
+                    $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
+                    $('.modal-title').text('Edit Pasien'); // Set title to Bootstrap modal title
+
+                },
+                error: function (jqXHR, textStatus, errorThrown)
+                {
+                    alert('Error get data from ajax');
+                }
+            });
+        }
+    
+        function save(){
+            var data = $("#form").serialize();
+
+            var url;
+            if(save_method == 'add'){
+                url = "<?php echo base_url();?>Admin/pasien/pasien_add";
+            }else{
+                url = "<?php echo base_url();?>Admin/pasien/pasien_update";
+            }
+
+       // ajax adding data to database
+            $.ajax({
+                url : url,
+                type: "POST",
+                data: data,
+                dataType: "JSON",
+                success: function(data)
+                {
+                    if(data.status == "TRUE"){
+                        $('#modal_form').modal('hide');
+                        $('#pesan').empty();
+                        $('#pesan').show();
+                        $('#pesan').append("<button type='button' class='close' data-dismiss='alert'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button>SUCCESS <strong>"+data.pesan+"</strong>");
+                        $('#pesan').fadeOut(3000);
+                        location.reload();
+                    }else{
+                        $('.error_msg').show();
+                        $('.error_msg').html(data.msg);
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown)
+                {
+                    alert('Error adding / update data');
+                }
+            });
+        }
+    
+        function delete_pasien(id_pasien){
+            swal({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            },
+            
+            function(){
+                swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                $.ajax({
+                    url : "<?php echo base_url();?>Admin/pasien/pasien_delete/"+id_pasien,
+                    type: "POST",
+                    dataType: "JSON",
+                    success: function(data){        
+                        location.reload();
+                    },
+                    error: function (jqXHR, textStatus, errorThrown)
+                    {
+                        alert('Error deleting data');
+                    }
+                });
+            });
+        }
+    </script>
+
+
+</body>
+</html>
